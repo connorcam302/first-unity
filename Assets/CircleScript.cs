@@ -6,6 +6,7 @@ using UnityEditor.Callbacks;
 public class CircleScript : MonoBehaviour
 {
     public Rigidbody2D myRidgidBody;
+    public int speed;
     private PlayerInputActions inputActions;
 
     void Awake()
@@ -37,6 +38,6 @@ public class CircleScript : MonoBehaviour
     void Update()
     {
         Vector2 moveInput = inputActions.Player.Move.ReadValue<Vector2>();
-        myRidgidBody.linearVelocity = moveInput * 10;
+        myRidgidBody.linearVelocity = moveInput * speed;
     }
 }
